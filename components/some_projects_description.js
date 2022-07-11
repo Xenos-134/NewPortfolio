@@ -77,13 +77,3 @@ export default function SomeProjectsDescription({type}) {
         </div>
     )
 }
-
-/*
-                    <p>&emsp; Very basic notes app that I used to learn C#, WPF and MVVM pattern.
-                     </p>
-*/
-
-/*
-                    <p>&emsp; Computer graphic exercices done for Graphic Computations Subject.
-                    </p>
-*/

@@ -372,6 +372,14 @@
     height: 80px;
 }
 
+.badge {
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .scroller {
     width: 300px;
     height: 100px;
@@ -490,4 +498,111 @@
     width: 100%;
     display: flex;
     justify-content: right;
+}
+
+.contact_me {
+    background-color: #cccccc;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 10px;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 13px; 
+}
+
+.contact_me_input_div {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.contact_me_input {
+    width: 100%;
+    background-color:whitesmoke;
+    height: 90%;
+    margin-left: 10px;
+    box-shadow: inset 3px 3px 0px  #a1a1a1,
+    inset -3px -3px 0px #ffffff;
+}
+
+.input {
+    background-color: transparent;
+    margin-left: 10px;
+    width: 100%;
+    height: 100%;
+    border-width: 0px;
+    outline: none;
+    -webkit-appearance: none;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 13px; 
+
+}
+
+.input_label {
+    width: 75px;
+}
+
+.message_div {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    margin-top: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    box-shadow: inset 3px 3px 0px   #ffffff,
+    inset -3px -3px 0px #a1a1a1;
+    flex-direction: column;
+}
+
+.contact_me_input_div_message {
+    background-color: whitesmoke;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 3px 3px 0px #a1a1a1,
+    inset -3px -3px 0px #ffffff;
+}
+
+.input_text_area {
+    width: 100%;
+    height: 100%;
+    border-width: 0px;
+    outline: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    resize: none;
+    padding: 10px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 13px; 
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.send_button_div {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.input_message_div {
+    width: 100%;
+    height: 100%;
+}
+
+.time_div {
+    margin-right: 10px;
+    width: 100px;
+    height: 80%;
+    box-shadow: inset 3px 3px 0px #a1a1a1,
+    inset -3px -3px 0px #ffffff;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }

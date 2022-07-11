@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Draggable, {DraggableCore} from 'react-draggable'; // Both at the same time
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 const {ResizableBox} = require('react-resizable');
 
 import BottomBarPogram from "../components/bottom_program.js"
@@ -72,6 +72,7 @@ export default function Home() {
   const id = useRef(0);
   const zIndex = useRef(0);
   const [currentPostion, setCP] = useState({x:-100, y:-100});
+  const [clock, setClock] = useState("----")
 
   function manageMenuVisib() {
     setMenuVisibi(!isMenuOpen);
@@ -100,6 +101,7 @@ export default function Home() {
     window.active = true;
     setOW([...new_window_list, window]);
     setMenuVisibi(false)
+    setCP({x: 0, y: 0})
   }
 
   function createNewWindow(type, noteType) {
@@ -130,15 +132,25 @@ export default function Home() {
     changePosition(window)
   }
 
+  useEffect(()=>{
+    const interval = setInterval(() => {
+      setClock(c => new Date().getHours().toString()+":" + new Date().getMinutes().toString().padStart(2, "0")+":" + new Date().getSeconds().toString().padStart(2, "0"));
+    }, 1000);
+
+    return (clearInterval())
+  },[])
+
   return (
     <div className={styles.container} 
     style={{ 
-      backgroundImage: `url('/retro_background.jpg')`
+      backgroundImage: `url('/back.jpg')`,
+      backgroundSize: "100vw",
+      backgroundRepeat: "false"
     }}>
       <Head>
-        <title>New Portfolio</title>
+        <title>Hi :)</title>
         <meta name="description" content="Personal Portfolio" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/pika.png" />
       </Head>
 
       <main className={styles.main}>
@@ -234,6 +246,10 @@ export default function Home() {
               { openWindowCounter>0 &&
                 windows.sort((a,b) => a.id - b.id).map(window => (<BottomBarPogram window={window} method={activateBottomProgram}/>))
               }
+            </div>
+
+            <div className='time_div'>
+              <p>{clock}</p>
             </div>
         </div>
       </main>

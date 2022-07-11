@@ -4,6 +4,7 @@ import AboutMe from "../components/about_me.js"
 import MySkills from "./my_skills.js";
 import SomeProjects from "./some_projects.js";
 import SomeProjectsDescription from "./some_projects_description.js";
+import ContactMe from "./contact_me.js";
 
 export default function ProgramWindow({window, closeWindow, changePosition, createNewWindow}) {
     
@@ -48,7 +49,7 @@ export default function ProgramWindow({window, closeWindow, changePosition, crea
                       { window.type == WINDOS_TYPES_ENUM.ABOUT_ME.id && <AboutMe/> }
                       { window.type == WINDOS_TYPES_ENUM.MY_SKILLS.id && <MySkills/> }
                       { window.type == WINDOS_TYPES_ENUM.SOME_PROJECTS.id && <SomeProjects method={createNewWindow}/>}
-                      { window.type == WINDOS_TYPES_ENUM.CONTACT_ME.id && <SomeProjectsDescription/> }
+                      { window.type == WINDOS_TYPES_ENUM.CONTACT_ME.id && <ContactMe window={window} close={closeWindow}/> }
                       { window.type == WINDOS_TYPES_ENUM.NOTES.id && <SomeProjectsDescription type={window.note}/>}
                     </div>
                 </div>  

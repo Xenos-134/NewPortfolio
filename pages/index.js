@@ -245,20 +245,19 @@ export default function Home() {
           </button>
           <div className='bottom_bar_separator'/>
           <div className='bottom_bar_convex_bump'/>
-            <div className='bottom_bar_programs'>
+
 
               <BrowserView>
+                <div className='bottom_bar_programs'>
                 { openWindowCounter>0 &&
                   windows.sort((a,b) => a.id - b.id).map(window => (<BottomBarPogram key={window.id} window={window} method={activateBottomProgram}/>))
                 }
+                </div>
               </BrowserView>
-
               <MobileView>
-                { openWindowCounter > 0 && windows.at(-1) && 
-                  <BottomBarPogram key={windows.at(-1).id} window={windows.at(-1)} method={activateBottomProgram}/>
-                }
+                <div className='bottom_bar_programs'>
+                </div>
               </MobileView>
-            </div>
 
             <div className='time_div'>
               <p>{clock}</p>

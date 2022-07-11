@@ -71,7 +71,7 @@ export default function Home() {
   const [windows, setOW] = useState([]);
   const id = useRef(0);
   const zIndex = useRef(0);
-  const [currentPostion, setCP] = useState({x:-100, y:-100});
+  const [currentPostion, setCP] = useState({x:0, y:0});
   const [clock, setClock] = useState("----")
 
   function manageMenuVisib() {
@@ -110,7 +110,7 @@ export default function Home() {
     if(noteType) window.setNote(noteType);
 
     window.setPosition(currentPostion.x, currentPostion.y);
-    setCP({x: currentPostion.x + 40, y: currentPostion.y + 40})
+    setCP({x: currentPostion.x + 40, y: currentPostion.y + 10})
     setOW([...windows, window]);
     setOWC(openWindowCounter+1);
     console.log("NEW WINDOW", window)
@@ -144,8 +144,8 @@ export default function Home() {
     <div className={styles.container} 
     style={{ 
       backgroundImage: `url('/back.jpg')`,
-      backgroundSize: "100vw",
-      backgroundRepeat: "false"
+      backgroundSize: 'cover',
+      overflow: 'hidden',
     }}>
       <Head>
         <title>Hi :)</title>
@@ -177,7 +177,7 @@ export default function Home() {
           </div>
 
           <div className='icon' onClick={()=>createNewWindow(WINDOS_TYPES_ENUM.CONTACT_ME.id)}>
-            <img src={"./contact_me.png"}  className="icon_image"  alt="am_icon"/>
+            <img src={"./mailer.png"}  className="icon_image"  alt="am_icon" style={{height: "60px", marginBottom: "-10px"}}/>
             <p>CONTACT ME</p>
           </div>
         </div>
@@ -213,7 +213,7 @@ export default function Home() {
                   </div>
 
                   <div className='menu_windows_item' onClick={()=>createNewWindow(WINDOS_TYPES_ENUM.CONTACT_ME.id)}>
-                    <img src={"./contact_me.png"}  className="menu_icons"  alt="am_icon"/>
+                    <img src={"./mailer.png"}  className="icon_image"  alt="am_icon" style={{height: "50px", marginLeft: "5px"}}/>
                     <p>Contact Me</p>
                   </div>
               </div>

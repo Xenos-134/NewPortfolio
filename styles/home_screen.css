@@ -282,17 +282,15 @@
 }
 
 .icons_div {
-    height: 70vh;
-    min-height: 500px;
+    height:  50vh;
     display: flex;
-    justify-content: space-between;
+    margin-left: 1vw;
+    justify-content: space-around;
     flex-direction: column;
     align-self: flex-start;
 }
 
 .icon {
-    width: 10vh;
-    height: 10vh;
     display: flex;
     align-items: center;
     justify-content: center;

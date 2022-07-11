@@ -66,7 +66,7 @@ export default function SomeProjectsDescription({type}) {
                     }
 
                     {type == NOTES.COMPILERS && 
-                        <p>&emsp; Self made compiler of my group for Compilers Subject. 
+                        <p>&emsp; Self made programming language of my group for Compilers Subject. 
                         </p>
                     }
                 </div>

@@ -6,6 +6,8 @@ import SomeProjects from "./some_projects.js";
 import SomeProjectsDescription from "./some_projects_description.js";
 import ContactMe from "./contact_me.js";
 
+import {BrowserView, MobileView} from 'react-device-detect';
+
 export default function ProgramWindow({window, closeWindow, changePosition, createNewWindow}) {
     
     function changeWindowPosition(x, y) {
@@ -22,6 +24,8 @@ export default function ProgramWindow({window, closeWindow, changePosition, crea
     }
 
     return (
+        <>
+                <BrowserView>
         <Draggable
             handle=".drag_zone"
             allowAnyClick
@@ -36,14 +40,14 @@ export default function ProgramWindow({window, closeWindow, changePosition, crea
                         <div className="drag_zone">
                             <p>{WINDOS_TYPES_ENUM[Object.keys(WINDOS_TYPES_ENUM)[window.type]].name}</p>
                         </div>
-                        <divs>
+                        <div className="program_top_buttons">
                             <button className='window_top_button' onClick={()=>console.log("WILL NOT SHOW")}>
                             _
                             </button>
                             <button className='window_top_button' onClick={()=>closeWindow(window.id)}>
                             X
                             </button>
-                        </divs>
+                        </div>
                     </div>
                     <div className='window_inner'>
                       { window.type == WINDOS_TYPES_ENUM.ABOUT_ME.id && <AboutMe/> }
@@ -54,6 +58,33 @@ export default function ProgramWindow({window, closeWindow, changePosition, crea
                     </div>
                 </div>  
         </Draggable>
+        </BrowserView>
+
+        <MobileView>
+            <div className='window_mobile' style={{zIndex: window.zIndex}}>
+                <div className='window_top'>
+                    <div className="drag_zone">
+                        <p>{WINDOS_TYPES_ENUM[Object.keys(WINDOS_TYPES_ENUM)[window.type]].name}</p>
+                    </div>
+                    <div className="program_top_buttons">
+                        <button className='window_top_button' onClick={()=>console.log("WILL NOT SHOW")}>
+                        _
+                        </button>
+                        <button className='window_top_button' onClick={()=>closeWindow(window.id)}>
+                        X
+                        </button>
+                    </div>
+                </div>
+                <div className='window_inner'>
+                { window.type == WINDOS_TYPES_ENUM.ABOUT_ME.id && <AboutMe/> }
+                { window.type == WINDOS_TYPES_ENUM.MY_SKILLS.id && <MySkills/> }
+                { window.type == WINDOS_TYPES_ENUM.SOME_PROJECTS.id && <SomeProjects method={createNewWindow}/>}
+                { window.type == WINDOS_TYPES_ENUM.CONTACT_ME.id && <ContactMe window={window} close={closeWindow}/> }
+                { window.type == WINDOS_TYPES_ENUM.NOTES.id && <SomeProjectsDescription type={window.note}/>}
+                </div>
+            </div>  
+        </MobileView>
+        </>
     )
 }
 

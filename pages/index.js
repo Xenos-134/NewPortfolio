@@ -8,6 +8,8 @@ const {ResizableBox} = require('react-resizable');
 import BottomBarPogram from "../components/bottom_program.js"
 import ProgramWindow from '../components/program_window';
 import { NOTES } from '../components/some_projects_description';
+import {BrowserView, MobileView} from 'react-device-detect';
+
 
 
 const DEBUG_MODE = true;

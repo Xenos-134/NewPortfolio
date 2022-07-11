@@ -122,20 +122,56 @@
     background-color: #cccccc;
     position: absolute;
     display: flex;
-    width: 500px;
-    height: 600px;
+    width: 25vw;
+    height: 60vh;
     align-items: center;
     justify-content: center;
     padding: 5px;
     resize: both;
     overflow: auto;
-    min-height: 600px;
-    min-width: 500px;
+    min-height: 300px;
+    min-width: 300px;
     flex-direction: column;
     box-shadow:  7px 7px 0px #ffffff;
     border:1.5px solid black;
+    align-self: flex-start;
+    top: 10vh;
+    left: 10vw;
+}
 
 
+.window_mobile {
+    background-color: #cccccc;
+    display: flex;
+    position: absolute;
+    width: 90vw;
+    height: 70vh;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    resize: both;
+    min-height: 300px;
+    min-width: 300px;
+    flex-direction: column;
+    box-shadow:  7px 7px 0px #ffffff;
+    border:1.5px solid black;
+    top: 10vh;
+    left: 5vw;
+}
+
+.program_top_buttons {
+    flex-direction: row;
+    display: flex;
+}
+
+.about_me_title_mobile {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 17px;   
+    font-weight: 700;
+    display: flex;
+    align-self: center;
+    justify-self: center; 
+    width: 100%;
 }
 
 .window_inner {

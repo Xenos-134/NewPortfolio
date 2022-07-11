@@ -1,6 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto+Mono:wght@100;500&display=swap');
 
 
+* {
+    cursor: url('../public/cursor3.png'), default;
+    
+}
+
+
+button {
+    cursor: url('../public/cursor4.png'), auto;
+}
+
+.github_button {
+    cursor: url('../public/cursor4.png'), auto;
+}
+
+.icon {
+    cursor: url('../public/cursor4.png'), auto;
+}
+
+.book_icon {
+    cursor: url('../public/cursor4.png'), auto;
+}
+
+.note_icon {
+    cursor: url('../public/cursor4.png'), auto;
+}
+
+.menu_button_center {
+    cursor: url('../public/cursor4.png'), auto;
+}
+
 .bottom_bar {
     display: flex;
     background-color: #cccccc;
@@ -358,6 +388,7 @@
     inset -2px -2px 0px #ffffff;
     padding-left: 15px;
     flex-direction: column;
+    overflow: auto;
 }
 
 .about_me_title {
@@ -525,7 +556,6 @@
     border:1.5px solid black;
     box-shadow: inset 3px 3px 0px #ffffff,
     inset -3px -3px 0px #a1a1a1;
-    cursor: pointer;
 }
 
 .notes_bottom {

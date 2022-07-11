@@ -18,7 +18,7 @@ export default function AboutMe({window, changeWindowPosition}) {
         </div>
         <div className="about_me_text">
             <p>&emsp;Hi, my name is Artem. I like to use my programing skills to solve real-word problems.<br/>
-               &emsp;Currently I'm Computer Science Student at Superior Institute of Technology, Lisbon.</p> 
+               &emsp;Currently I&apos;m Computer Science Student at Superior Institute of Technology, Lisbon.</p> 
         </div>
         <div className="about_me_text">
             <p>

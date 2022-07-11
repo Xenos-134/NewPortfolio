@@ -225,6 +225,7 @@ export default function Home() {
           openWindowCounter>0 &&
           windows.map(window => (
               <ProgramWindow 
+                key={window.id}
                 window={window} 
                 closeWindow={closeWindow}
                 changePosition={changePosition}
@@ -244,7 +245,7 @@ export default function Home() {
           <div className='bottom_bar_convex_bump'/>
             <div className='bottom_bar_programs'>
               { openWindowCounter>0 &&
-                windows.sort((a,b) => a.id - b.id).map(window => (<BottomBarPogram window={window} method={activateBottomProgram}/>))
+                windows.sort((a,b) => a.id - b.id).map(window => (<BottomBarPogram key={window.id} window={window} method={activateBottomProgram}/>))
               }
             </div>
 

@@ -45,7 +45,7 @@ export default function SomeProjectsDescription({type}) {
 
                     {type == NOTES.KERAS && 
                         <p>&emsp; My free time hobby. Using both to construct cnn to classify images of Sign Language Alphabet. <br/>
-                        &emsp; Achived 97% of accuracy. Currently testing with different pre-processing, configurations and more data.
+                        &emsp; Achieved 97% of accuracy. Currently testing with different pre-processing, configurations and more data
                         </p>
                     }
 
@@ -61,7 +61,7 @@ export default function SomeProjectsDescription({type}) {
                     }
 
                     {type == NOTES.THREEJS && 
-                        <p>&emsp; Computer graphic exercices done for Graphic Computations Subject.
+                        <p>&emsp;  Computer graphic exercises done for Graphic Computations Subject.
                         </p>
                     }
 

@@ -32,7 +32,7 @@ export default function AboutMe({window, changeWindowPosition}) {
             <p>
                 &emsp; <b>NAME: </b> Artem Mordan<br/><br/>
                 &emsp; <b>AGE: </b> 23<br/><br/>
-                &emsp; <b>CURRENT OCCUPATION: </b> Studet<br/><br/>
+                &emsp; <b>CURRENT OCCUPATION: </b> Student<br/><br/>
                 &emsp; <b>CURRENT LOCATION: </b> Lisbon, Portugal<br/><br/>
                 &emsp; <b>GITHUB PROFILE: </b> Xenos-134<br/><br/>
             </p> 

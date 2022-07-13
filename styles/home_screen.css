@@ -153,6 +153,7 @@ button {
     position: absolute;
     display: flex;
     width: 25vw;
+    min-width: 500px;
     height: 60vh;
     align-items: center;
     justify-content: center;
@@ -160,7 +161,6 @@ button {
     resize: both;
     overflow: auto;
     min-height: 300px;
-    min-width: 300px;
     flex-direction: column;
     box-shadow:  7px 7px 0px #ffffff;
     border:1.5px solid black;

@@ -25,39 +25,39 @@ export default function ProgramWindow({window, closeWindow, changePosition, crea
 
     return (
         <>
-                <BrowserView>
-        <Draggable
-            handle=".drag_zone"
-            allowAnyClick
-            position={{x:window.x, y: window.y}}
-            grid={[5, 5]}
-            scale={1}
-            onStart={()=>{console.log("begin")}}
-            onDrag={()=>{console.log("drag")}}
-            onStop={(e, data)=>{console.log(data.x, data.y); changeWindowPosition(data.x, data.y)}}>
-                <div className='window' style={{zIndex: window.zIndex}}>
-                    <div className='window_top'>
-                        <div className="drag_zone">
-                            <p>{WINDOS_TYPES_ENUM[Object.keys(WINDOS_TYPES_ENUM)[window.type]].name}</p>
+        <BrowserView>
+            <Draggable
+                handle=".drag_zone"
+                allowAnyClick
+                position={{x:window.x, y: window.y}}
+                grid={[5, 5]}
+                scale={1}
+                onStart={()=>{console.log("begin")}}
+                onDrag={()=>{console.log("drag")}}
+                onStop={(e, data)=>{console.log(data.x, data.y); changeWindowPosition(data.x, data.y)}}>
+                    <div className='window' style={{zIndex: window.zIndex}}>
+                        <div className='window_top'>
+                            <div className="drag_zone">
+                                <p>{WINDOS_TYPES_ENUM[Object.keys(WINDOS_TYPES_ENUM)[window.type]].name}</p>
+                            </div>
+                            <div className="program_top_buttons">
+                                <button className='window_top_button' onClick={()=>console.log("WILL NOT SHOW")}>
+                                _
+                                </button>
+                                <button className='window_top_button' onClick={()=>closeWindow(window.id)}>
+                                X
+                                </button>
+                            </div>
                         </div>
-                        <div className="program_top_buttons">
-                            <button className='window_top_button' onClick={()=>console.log("WILL NOT SHOW")}>
-                            _
-                            </button>
-                            <button className='window_top_button' onClick={()=>closeWindow(window.id)}>
-                            X
-                            </button>
+                        <div className='window_inner'>
+                        { window.type == WINDOS_TYPES_ENUM.ABOUT_ME.id && <AboutMe/> }
+                        { window.type == WINDOS_TYPES_ENUM.MY_SKILLS.id && <MySkills/> }
+                        { window.type == WINDOS_TYPES_ENUM.SOME_PROJECTS.id && <SomeProjects method={createNewWindow}/>}
+                        { window.type == WINDOS_TYPES_ENUM.CONTACT_ME.id && <ContactMe window={window} close={closeWindow}/> }
+                        { window.type == WINDOS_TYPES_ENUM.NOTES.id && <SomeProjectsDescription type={window.note}/>}
                         </div>
-                    </div>
-                    <div className='window_inner'>
-                      { window.type == WINDOS_TYPES_ENUM.ABOUT_ME.id && <AboutMe/> }
-                      { window.type == WINDOS_TYPES_ENUM.MY_SKILLS.id && <MySkills/> }
-                      { window.type == WINDOS_TYPES_ENUM.SOME_PROJECTS.id && <SomeProjects method={createNewWindow}/>}
-                      { window.type == WINDOS_TYPES_ENUM.CONTACT_ME.id && <ContactMe window={window} close={closeWindow}/> }
-                      { window.type == WINDOS_TYPES_ENUM.NOTES.id && <SomeProjectsDescription type={window.note}/>}
-                    </div>
-                </div>  
-        </Draggable>
+                    </div>  
+            </Draggable>
         </BrowserView>
 
         <MobileView>

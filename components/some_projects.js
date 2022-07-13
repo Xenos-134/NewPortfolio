@@ -109,7 +109,7 @@ export default function SomeProjects({method}) {
                         openBooks.includes(BOOKS.C) &&
                         <div className="ms_note" onClick={()=>createNewProgram(NOTES.COMPILERS)}>
                             <img src={"./note.png"}  className="note_icon"  alt="book"/>
-                            <p>compilerer</p>
+                            <p>compiler</p>
                         </div>  
                     }
                 </div>
